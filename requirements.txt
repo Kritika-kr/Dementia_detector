@@ -1,0 +1,33 @@
+# Core
+streamlit
+numpy
+pandas
+matplotlib
+seaborn
+
+# Machine Learning
+scikit-learn
+xgboost
+joblib
+
+# Deep Learning
+tensorflow
+keras
+torch
+torchaudio
+torchvision
+
+# Audio Processing
+librosa
+soundfile
+scipy
+praat-parselmouth   # for jitter, shimmer, formants
+pyAudioAnalysis
+
+# NLP (if you fuse text & audio later)
+nltk
+transformers
+
+# Utilities
+tqdm
+
