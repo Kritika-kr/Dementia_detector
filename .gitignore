@@ -1,0 +1,29 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environment
+.venv/
+env/
+venv/
+
+# Large ML files
+*.npy
+*.npz
+*.pkl
+*.h5
+*.pt
+*.bin
+*.joblib
+
+# Audio & Features
+/data/
+features/
+dl_features/
+models/
+outputs/
+checkpoints/
+
+# Jupyter
+.ipynb_checkpoints/

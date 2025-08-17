@@ -1,0 +1,64 @@
+import os
+import numpy as np
+import librosa
+from tqdm import tqdm
+
+# === CONFIG ===
+CONTROL_DIR = "data/audio data/control"
+DEMENTIA_DIR = "data/audio data/dementia"
+
+OUTPUT_FILE = "features/audio_features.npy"
+LABELS_FILE = "features/labels.npy"
+TEXT_FEATURES_FILE = "features/combined_features.npy"
+TEXT_FILENAMES_FILE = "outputs/features/filenames.npy"  # Must match text feature order
+
+# === Load participant order from text features ===
+labels = np.load(LABELS_FILE)
+text_features = np.load(TEXT_FEATURES_FILE)
+file_names = np.load(TEXT_FILENAMES_FILE)
+
+print(f"Text features shape: {text_features.shape}")
+print(f"Labels shape: {labels.shape}")
+print(f"Number of filenames: {len(file_names)}")
+
+# === Feature extraction function ===
+def extract_audio_features(file_path, sr=16000, n_mfcc=13):
+    y, sr = librosa.load(file_path, sr=sr)
+    mfcc = librosa.feature.mfcc(y=y, sr=sr, n_mfcc=n_mfcc)
+    mfcc_mean = np.mean(mfcc, axis=1)
+
+    zcr = np.mean(librosa.feature.zero_crossing_rate(y))
+    rms = np.mean(librosa.feature.rms(y=y))
+
+    return np.hstack([mfcc_mean, zcr, rms])
+
+# === Build a lookup table for quick access ===
+audio_lookup = {}
+
+# Control group
+for fname in os.listdir(CONTROL_DIR):
+    audio_lookup[fname] = os.path.join(CONTROL_DIR, fname)
+
+# Dementia group
+for fname in os.listdir(DEMENTIA_DIR):
+    audio_lookup[fname] = os.path.join(DEMENTIA_DIR, fname)
+
+# === Extract features in the same order as text features ===
+audio_features = []
+missing_files = []
+
+for fname in tqdm(file_names, desc="Extracting audio features"):
+    if fname not in audio_lookup:
+        missing_files.append(fname)
+        continue
+    feats = extract_audio_features(audio_lookup[fname])
+    audio_features.append(feats)
+
+if missing_files:
+    print("⚠ Missing audio files:", missing_files)
+
+audio_features = np.array(audio_features)
+np.save(OUTPUT_FILE, audio_features)
+
+print(f"✅ Saved audio features to {OUTPUT_FILE}")
+print(f"Shape: {audio_features.shape}")
