@@ -1,35 +1,5 @@
 # Core
-streamlit
-numpy
-pandas
-matplotlib
-seaborn
 
-# Machine Learning
-scikit-learn
-xgboost
-joblib
-
-# Deep Learning
-tensorflow
-keras
-torch
-torchaudio
-torchvision
-
-# Audio Processing
-librosa
-soundfile
-scipy
-praat-parselmouth   # for jitter, shimmer, formants
-pyAudioAnalysis
-
-# NLP (if you fuse text & audio later)
-nltk
-transformers
-
-# Utilities
-tqdm
 streamlit
 joblib
 scikit-learn
@@ -45,4 +15,21 @@ torch
 transformers
 gensim
 
+streamlit
+joblib
+scikit-learn
+numpy
+pandas
+matplotlib
+seaborn
+librosa
+soundfile
+scipy
+tensorflow==2.12.0
+torch
+torchaudio
+transformers
+xgboost
+lightgbm
+gensim
 
