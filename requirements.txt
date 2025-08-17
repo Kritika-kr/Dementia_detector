@@ -1,15 +1,12 @@
 # streamlit
-joblib
-scikit-learn
+# requirements.txt (minimal & safe)
+streamlit
 numpy
 pandas
+scikit-learn
+joblib
 matplotlib
-seaborn
-librosa
-soundfile
-scipy
 xgboost
 lightgbm
 gensim
-
 
