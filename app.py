@@ -3,11 +3,10 @@ import joblib
 import numpy as np
 from extract_combined_features_single import extract_features
 
-# Load the trained Voting model
+
 model_path = "outputs/models/ensemble_lasso_rf_svm.pkl"
 model = joblib.load(model_path)
 
-# Streamlit UI
 st.set_page_config(page_title="Dementia Detection (Voting Model)", layout="centered")
 st.title("Dementia Detection App")
 st.subheader("Using Voting Ensemble on Combined Features")
