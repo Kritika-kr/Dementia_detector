@@ -30,4 +30,19 @@ transformers
 
 # Utilities
 tqdm
+streamlit
+joblib
+scikit-learn
+numpy
+pandas
+matplotlib
+seaborn
+librosa
+soundfile
+scipy
+tensorflow
+torch
+transformers
+gensim
+
 
