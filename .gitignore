@@ -9,13 +9,11 @@ env/
 venv/
 
 # Large ML files
-*.npy
-*.npz
-*.pkl
+
 *.h5
 *.pt
 *.bin
-*.joblib
+
 
 # Audio & Features
 /data/
