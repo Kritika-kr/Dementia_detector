@@ -10,4 +10,4 @@ labels = df["Label"].values
 # Save as .npy
 np.save("features/labels.npy", labels)
 
-print("✅ Labels saved as features/labels.npy")
+print(" Labels saved as features/labels.npy")
