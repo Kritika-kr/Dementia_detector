@@ -76,5 +76,5 @@ def extract_features(text):
         linguistic_feat
     ], axis=1)
 
-    print("✅ Combined shape:", combined.shape)
+    print("Combined shape:", combined.shape)
     return combined
