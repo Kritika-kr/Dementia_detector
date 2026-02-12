@@ -75,5 +75,6 @@ Rather than relying on a single model, this project combines multiple strong lea
 
 Both approaches significantly improved performance compared to standalone models.
 
+Team Members: Kritika Kumari & Ashita Jha
 ---
 
