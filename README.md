@@ -25,6 +25,26 @@ The primary objective is to enhance prediction performance through **advanced fe
 
 ---
 
+## 🛠️ Tech Stack
+
+**Programming Language:**  
+- Python  
+
+**Libraries & Frameworks:**  
+- Scikit-learn  
+- XGBoost  
+- Pandas  
+- NumPy  
+- Matplotlib / Seaborn  
+
+**Machine Learning Techniques:**  
+- Feature Engineering  
+- Hyperparameter Tuning  
+- Ensemble Learning  
+- Model Stacking   
+
+---
+
 ## 🎯 Model Performance
 
 The system achieves an **approximate accuracy of 95%** using an optimized **ensemble voting classifier**.
